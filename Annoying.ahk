@@ -5,6 +5,17 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 program = 1
 
+SetTimer, Rand, 120000
+return
+
+Rand:
+{
+  Random, prog, 1, 3
+  program = %prog%
+  return
+}
+
+;Testing Controls
 ^s::
 {
   Random, prog, 1, 3
@@ -13,7 +24,6 @@ program = 1
   return
 }
 
-;Testing Controls
 NumPad1::
 {
   program = 1
@@ -39,7 +49,7 @@ NumPad3::
 Esc::
 {
   Suspend, On
-  Sleep, 15000
+  Sleep, 20000
   Suspend, Off
   Send ^s
   return
@@ -83,7 +93,7 @@ Esc::
 
 #If (program = 3)
 {
-  ::c::b
+  c::b
 }
 
 ^m::ExitApp
