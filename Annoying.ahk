@@ -39,7 +39,7 @@ NumPad3::
 Esc::
 {
   Suspend, On
-  Sleep, 5000
+  Sleep, 15000
   Suspend, Off
   Send ^s
   return
