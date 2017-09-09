@@ -5,6 +5,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 program = 1
 
+;Switches functions every two minutes
 SetTimer, Rand, 120000
 return
 
@@ -46,6 +47,7 @@ NumPad3::
 }
 ;END testing controls
 
+;Fake Escape function
 Esc::
 {
   Suspend, On
@@ -55,6 +57,7 @@ Esc::
   return
 }
 
+;FUNCTION: Opens different gifs every time victim presses 'n' key
 #If (program = 1)
 {
   n::
@@ -76,6 +79,7 @@ Esc::
   }
 }
 
+;FUNCTION: Hotstrings/autoreplaces some common words
 #If (program = 2)
 {
   ;Hotstrings
@@ -91,9 +95,11 @@ Esc::
   ::was::were
 }
 
+;FUNCTION: Replace 'c's with 'b's
 #If (program = 3)
 {
   c::b
 }
 
+;Exit script
 ^m::ExitApp
